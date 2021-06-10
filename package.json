@@ -13,7 +13,7 @@
         "build": "webpack --mode production",
         "dev": "npm run start",
         "lint": "vscode-linter",
-        "start": "webpack --mode none --watch",
+        "start": "webpack --mode none --watch --info-verbosity verbose",
         "test": "npm run lint",
         "vscode:prepublish": "npm run build"
     },
@@ -84,24 +84,22 @@
                     ".iss"
                 ],
                 "configuration": "./config/inno-setup.json"
-            },
-            {
-                "id": "innopascal",
-                "aliases": [
-                    "Inno Pascal",
-                    "InnoPascal",
-                    "innopascal"
-                ]
             }
         ],
         "grammars": [
             {
                 "language": "innosetup",
                 "scopeName": "source.inno",
+                "embeddedLanguages": {
+                    "source.pascal.embedded.inno": "pascal"
+                },
                 "path": "./syntaxes/inno-setup.tmLanguage"
             },
             {
-                "language": "innopascal",
+                "injectTo": [
+                    "source.inno",
+                    "source.pascal"
+                ],
                 "scopeName": "source.pascal.inno",
                 "path": "./syntaxes/inno-pascal.tmLanguage"
             }
@@ -151,7 +149,7 @@
                 "path": "./snippets/inno-setup.json"
             },
             {
-                "language": "innopascal",
+                "language": "pascal",
                 "path": "./snippets/inno-pascal.json"
             }
         ]

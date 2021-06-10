@@ -35,7 +35,7 @@
             <array>
                 <dict>
                     <key>include</key>
-                    <string>source.pascal.inno</string>
+                    <string>source.pascal</string>
                 </dict>
             </array>
         </dict>
